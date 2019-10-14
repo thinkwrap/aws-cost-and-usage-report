@@ -2,7 +2,7 @@
 
 This is quick guide how to create spending report for AWS account that can be loaded to / manipulated by Google sheet.
 
-I was adapted the Python script from <https://github.com/aws-samples/aws-cost-explorer-report>.
+I have adapted the Python script from <https://github.com/aws-samples/aws-cost-explorer-report>.
 
 The forked and modified version is available at <https://github.com/thinkwrap/aws-cost-and-usage-report> (public repo).
 
