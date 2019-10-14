@@ -29,7 +29,7 @@ while True:
     if not token:
         break
 
-print('\t'.join(['TimePeriod', 'LinkedAccount', 'Service', 'Amount', 'Unit', 'Estimated']))
+print('\t'.join(['TimePeriod', 'Service', 'Region', 'Amount', 'Unit', 'Estimated']))
 for result_by_time in results:
     for group in result_by_time['Groups']:
         amount = group['Metrics']['UnblendedCost']['Amount']

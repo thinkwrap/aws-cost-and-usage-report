@@ -4,6 +4,13 @@ AWS Cost Report
 
 Simple example script to generate a TSV file using the `AWS Cost Explorer API <https://aws.amazon.com/blogs/aws/new-interactive-aws-cost-explorer-api/>`_.
 
+Installation
+
+* clone the repo
+* 'pipenv install'
+* 'pipenv shell'
+
+
 Usage:
 
 .. code-block:: bash
@@ -25,3 +32,7 @@ TimeSpan   LinkedAccount Service                                Amount Unit Esti
 2017-11-27 001111111111  Amazon Elastic Compute Cloud - Compute 411.25 USD  True
 2017-11-27 001111111111  Amazon Elastic Load Balancing          16.201 USD  True
 ========== ============= ====================================== ====== ==== =========
+
+See also changes in the latest version (extract from Wiki): CHANGES.md
+
+
