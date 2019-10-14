@@ -13,7 +13,7 @@ now = datetime.datetime.utcnow()
 start = (now - datetime.timedelta(days=args.days)).strftime('%Y-%m-%d')
 end = now.strftime('%Y-%m-%d')
 
-cd = boto3.client('ce', 'us-east-1')
+cd = boto3.client('ce')
 
 results = []
 
@@ -23,7 +23,7 @@ while True:
         kwargs = {'NextPageToken': token}
     else:
         kwargs = {}
-    data = cd.get_cost_and_usage(TimePeriod={'Start': start, 'End':  end}, Granularity='DAILY', Metrics=['UnblendedCost'], GroupBy=[{'Type': 'DIMENSION', 'Key': 'LINKED_ACCOUNT'}, {'Type': 'DIMENSION', 'Key': 'SERVICE'}], **kwargs)
+    data = cd.get_cost_and_usage(TimePeriod={'Start': start, 'End':  end}, Granularity='DAILY', Metrics=['UnblendedCost'], GroupBy=[{'Type': 'DIMENSION', 'Key': 'SERVICE'}, {'Type': 'DIMENSION', 'Key': 'REGION'}], **kwargs)
     results += data['ResultsByTime']
     token = data.get('NextPageToken')
     if not token:
